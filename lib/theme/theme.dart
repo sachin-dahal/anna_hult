@@ -9,7 +9,7 @@ ThemeData kLightTheme = ThemeData(
       button: TextStyle(fontSize: 16, letterSpacing: 0.5),
       // h1
       headline5: TextStyle(
-        fontSize: 28,
+        fontSize: 24,
         fontWeight: FontWeight.w600,
         color: kPrimaryTextColor,
       ),
@@ -22,7 +22,7 @@ ThemeData kLightTheme = ThemeData(
       // body med
       bodyText1: TextStyle(
         fontSize: 18,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w400,
         color: kSecondaryTextColor,
       ),
       // body norm - med
@@ -35,7 +35,7 @@ ThemeData kLightTheme = ThemeData(
       subtitle1: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
-        color: kPrimaryColor,
+        color: kPrimaryTextColor,
       ),
       // body small
       subtitle2: TextStyle(
@@ -48,11 +48,15 @@ ThemeData kLightTheme = ThemeData(
         fontWeight: FontWeight.w400,
         color: kSecondaryTextColor,
       )),
-  scaffoldBackgroundColor: kBackgroundColor,
+  scaffoldBackgroundColor: kPrimaryColor,
+  cursorColor: kPrimaryTextColor,
   inputDecorationTheme: InputDecorationTheme(
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.circular(4),
-    ),
+    // border: OutlineInputBorder(
+    //   borderSide: BorderSide(color: kPrimaryTextColor),
+    //   borderRadius: BorderRadius.circular(8),
+    // ),
+    focusedBorder:
+        UnderlineInputBorder(borderSide: BorderSide(color: kPrimaryTextColor)),
     isDense: true,
     contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
   ),
