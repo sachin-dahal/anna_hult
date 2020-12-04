@@ -6,18 +6,11 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RegisterPageController extends GetxController {
-  bool isBuyer = true;
   bool _agree = false;
+  bool get agree => _agree;
 
-  buyer() {
-    isBuyer = true;
-    update();
-  }
-
-  seller() {
-    isBuyer = false;
-    update();
-  }
+  int _value = 0;
+  int get value => _value;
 
   Widget checkedBox() {
     return CheckboxListTile(
@@ -35,7 +28,7 @@ class RegisterPageController extends GetxController {
           textConfirm: "Agree",
           buttonColor: kButtonColor1,
           onConfirm: () {
-            _agree = !_agree;
+            _agree = true;
             Get.back();
             update();
           },
@@ -82,8 +75,30 @@ class RegisterPageController extends GetxController {
     );
   }
 
-  void changed(value) {
-    _agree = !_agree;
-    update();
+  Widget dropDown() {
+    return DropdownButtonFormField(
+      value: _value,
+      dropdownColor: kBackgroundColor,
+      style: GoogleFonts.poppins(
+        textStyle: TextStyle(
+          fontSize: 18.0,
+          fontWeight: FontWeight.w600,
+          color: kPrimaryTextColor,
+        ),
+      ),
+      items: [
+        DropdownMenuItem(
+          child: Text("I'm a Buyer"),
+          value: 0,
+        ),
+        DropdownMenuItem(
+          child: Text("I'm a Seller"),
+          value: 1,
+        ),
+      ],
+      onChanged: (value) {
+        _value = value;
+      },
+    );
   }
 }

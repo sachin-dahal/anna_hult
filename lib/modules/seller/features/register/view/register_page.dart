@@ -1,7 +1,6 @@
 import 'package:anna_hult/common/ui/ui_helper.dart';
 import 'package:anna_hult/modules/buyer/features/buyer_homepage/view/buyer_homepage.dart';
 import 'package:anna_hult/modules/seller/data/register_controller/register_page_controller.dart';
-import 'package:anna_hult/modules/seller/features/login/view/login_page.dart';
 import 'package:anna_hult/modules/seller/features/seller_homepage/view/seller_homepage.dart';
 import 'package:anna_hult/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -93,24 +92,9 @@ class RegisterPage extends StatelessWidget {
               obscuringCharacter: '*',
             ),
             mHeightSpan,
-            DropdownButtonFormField(
-              dropdownColor: kBackgroundColor,
-              style: GoogleFonts.poppins(
-                  textStyle: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.w600,
-                color: kPrimaryTextColor,
-              )),
-              items: [
-                DropdownMenuItem(child: Text("I'm a Buyer")),
-                DropdownMenuItem(child: Text("I'm a Seller"))
-              ],
-              onChanged: (value) {
-                if (value == "I'm a Buyer") {
-                  _registerPageController.buyer();
-                } else {
-                  _registerPageController.seller();
-                }
+            GetBuilder<RegisterPageController>(
+              builder: (_registerPageController) {
+                return _registerPageController.dropDown();
               },
             ),
             mHeightSpan,
@@ -125,9 +109,19 @@ class RegisterPage extends StatelessWidget {
               height: Get.height * 0.07,
               buttonColor: kButtonColor1,
               child: RaisedButton(
-                onPressed: () => _registerPageController.isBuyer
-                    ? Get.offAll(BuyerHomePage())
-                    : Get.offAll(SellerHomePage()),
+                onPressed: () {
+                  if (_registerPageController.agree) {
+                    _registerPageController.value == 0
+                        ? Get.offAll(BuyerHomePage())
+                        : Get.offAll(SellerHomePage());
+                  } else {
+                    Get.snackbar(
+                      "Invalid Attempt!",
+                      "Terms and Conditions are not agreed.",
+                      snackPosition: SnackPosition.BOTTOM,
+                    );
+                  }
+                },
                 child: Text(
                   "Register",
                   style: GoogleFonts.poppins(
