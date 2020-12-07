@@ -28,7 +28,7 @@ class AnnaMain extends StatelessWidget {
         photoSize: 80.0,
         loadingText: Text("Anna: Bla Bla Bla"),
         loaderColor: kButtonColor2,
-        navigateAfterSeconds: SellerHomePage(),
+        navigateAfterSeconds: BuyerHomePage(),
       ),
     );
   }

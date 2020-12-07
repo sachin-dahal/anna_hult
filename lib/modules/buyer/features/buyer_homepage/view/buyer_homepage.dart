@@ -26,7 +26,7 @@ class BuyerHomePage extends StatelessWidget {
                       Icons.location_on,
                       color: Colors.green,
                     ),
-                    Text("Deliver to\nAaitabare-Itahari, Nepal")
+                    Text("Deliver to\nAaitabare-Itahari, Nepal",style: TextStyle(color: Colors.black),)
                   ],
                 ),
               ],
@@ -49,7 +49,7 @@ class BuyerHomePage extends StatelessWidget {
               children: [
                 Text(
                   "Categories",
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(fontSize: 25,color: Colors.black),
                 ),
               ],
             ),
@@ -66,9 +66,11 @@ class BuyerHomePage extends StatelessWidget {
                       "assets/images/vegetable.jpg",
                     ),
                   ),
-                  Text("Vegetable")
+                  Text("Vegetable",style: TextStyle(color: Colors.black))
                 ]),
-                Column(children: [
+                Column(
+
+                  children: [
                   //"assets/images/rice.jpeg"
                   CircleAvatar(
                     backgroundColor: Colors.blue,
@@ -77,7 +79,7 @@ class BuyerHomePage extends StatelessWidget {
                       "assets/images/rice.jpeg",
                     ),
                   ),
-                  Text("Rice")
+                  Text("Rice",style: TextStyle(color: Colors.black))
                 ]),
                 Column(children: [
                   // Image.asset("assets/images/cereals.jpg", width: 80),
@@ -88,7 +90,7 @@ class BuyerHomePage extends StatelessWidget {
                       "assets/images/cereals.jpg",
                     ),
                   ),
-                  Text("Cereals")
+                  Text("Cereals",style: TextStyle(color: Colors.black))
                 ]),
                 Column(children: [
                   // Image.asset("assets/images/milkcategory.jpg", width: 80),
@@ -99,7 +101,7 @@ class BuyerHomePage extends StatelessWidget {
                       "assets/images/milkcategory.jpg",
                     ),
                   ),
-                  Text("Dairy Product")
+                  Text("Dairy Product",style: TextStyle(color: Colors.black))
                 ]),
               ],
             ),
@@ -111,9 +113,9 @@ class BuyerHomePage extends StatelessWidget {
               children: [
                 Text(
                   "Our Highlights",
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(fontSize: 25,color: Colors.black),
                 ),
-                Text("View All")
+                Text("View All",style: TextStyle(color: Colors.black))
               ],
             ),
             Expanded(
@@ -122,26 +124,29 @@ class BuyerHomePage extends StatelessWidget {
                   Row(
                     children: [
                       Card(
+                        elevation: 5,
                         child: Column(children: [
                           Image.asset(
                             "assets/images/cauliflower.jpg",
                             width: 100,
                             height: 150,
                           ),
-                          Text("Cauliflower")
+                          Text("Cauliflower",style: TextStyle(color: Colors.black))
                         ]),
                       ),
                       Card(
+                        elevation: 5,
                         child: Column(children: [
                           Image.asset(
                             "assets/images/rice.jpeg",
                             width: 100,
                             height: 150,
                           ),
-                          Text("Rice")
+                          Text("Rice",style: TextStyle(color: Colors.black))
                         ]),
                       ),
                       Card(
+                        elevation: 5,
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -150,7 +155,7 @@ class BuyerHomePage extends StatelessWidget {
                                 width: 100,
                                 height: 150,
                               ),
-                              Text("Milk")
+                              Text("Milk",style: TextStyle(color: Colors.black))
                             ]),
                       ),
                     ],
@@ -158,26 +163,29 @@ class BuyerHomePage extends StatelessWidget {
                   Row(
                     children: [
                       Card(
+                        elevation: 5,
                         child: Column(children: [
                           Image.asset(
                             "assets/images/lentils.jpg",
                             width: 100,
                             height: 150,
                           ),
-                          Text("Lentils")
+                          Text("Lentils",style: TextStyle(color: Colors.black))
                         ]),
                       ),
                       Card(
+                        elevation: 5,
                         child: Column(children: [
                           Image.asset(
                             "assets/images/potato.jpg",
                             width: 100,
                             height: 150,
                           ),
-                          Text("Potato")
+                          Text("Potato",style: TextStyle(color: Colors.black))
                         ]),
                       ),
                       Card(
+                        elevation: 5,
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -186,7 +194,7 @@ class BuyerHomePage extends StatelessWidget {
                                 width: 100,
                                 height: 150,
                               ),
-                              Text("Flour")
+                              Text("Flour",style: TextStyle(color: Colors.black))
                             ]),
                       ),
                     ],
