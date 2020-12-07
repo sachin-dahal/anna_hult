@@ -16,22 +16,19 @@ class BuyerHomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CircleAvatar(
-                  radius: 20,
-                  backgroundImage: AssetImage(
-                    "assets/images/anna_logo.png"
-                  ),
+                  backgroundColor: Colors.transparent,
+                  radius: 25,
+                  backgroundImage: AssetImage("assets/images/anna_logo.png"),
                 ),
-                Row(children: [
-                  Icon(
-                    Icons.location_on,
-                    color: Colors.green,
-                  ),
-                  Text("Deliver to\nAaitabare-Itahari, Nepal")
-                
-                ],
-                
+                Row(
+                  children: [
+                    Icon(
+                      Icons.location_on,
+                      color: Colors.green,
+                    ),
+                    Text("Deliver to\nAaitabare-Itahari, Nepal")
+                  ],
                 ),
-                
               ],
             ),
             SizedBox(
@@ -56,7 +53,7 @@ class BuyerHomePage extends StatelessWidget {
                 ),
               ],
             ),
-             SizedBox(
+            SizedBox(
               height: 20,
             ),
             Row(
@@ -72,8 +69,8 @@ class BuyerHomePage extends StatelessWidget {
                   Text("Vegetable")
                 ]),
                 Column(children: [
-                 //"assets/images/rice.jpeg"
-                 CircleAvatar(
+                  //"assets/images/rice.jpeg"
+                  CircleAvatar(
                     backgroundColor: Colors.blue,
                     radius: 40,
                     backgroundImage: AssetImage(
@@ -120,85 +117,83 @@ class BuyerHomePage extends StatelessWidget {
               ],
             ),
             Expanded(
-                          child: ListView(
+              child: ListView(
                 children: [
                   Row(
-                children: [
-                  Card(
-                    child: Column(children: [
-                      Image.asset(
-                        "assets/images/cauliflower.jpg",
-                        width: 100,
-                        height: 150,
+                    children: [
+                      Card(
+                        child: Column(children: [
+                          Image.asset(
+                            "assets/images/cauliflower.jpg",
+                            width: 100,
+                            height: 150,
+                          ),
+                          Text("Cauliflower")
+                        ]),
                       ),
-                      Text("Cauliflower")
-                    ]),
+                      Card(
+                        child: Column(children: [
+                          Image.asset(
+                            "assets/images/rice.jpeg",
+                            width: 100,
+                            height: 150,
+                          ),
+                          Text("Rice")
+                        ]),
+                      ),
+                      Card(
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/images/milk.png",
+                                width: 100,
+                                height: 150,
+                              ),
+                              Text("Milk")
+                            ]),
+                      ),
+                    ],
                   ),
-                  Card(
-                    child: Column(children: [
-                      Image.asset(
-                        "assets/images/rice.jpeg",
-                        width: 100,
-                        height: 150,
+                  Row(
+                    children: [
+                      Card(
+                        child: Column(children: [
+                          Image.asset(
+                            "assets/images/lentils.jpg",
+                            width: 100,
+                            height: 150,
+                          ),
+                          Text("Lentils")
+                        ]),
                       ),
-                      Text("Rice")
-                    ]),
-                  ),
-                  Card(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                      Image.asset(
-                        "assets/images/milk.png",
-                        width: 100,
-                        height: 150,
+                      Card(
+                        child: Column(children: [
+                          Image.asset(
+                            "assets/images/potato.jpg",
+                            width: 100,
+                            height: 150,
+                          ),
+                          Text("Potato")
+                        ]),
                       ),
-                      Text("Milk")
-                    ]),
+                      Card(
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/images/flour.jpg",
+                                width: 100,
+                                height: 150,
+                              ),
+                              Text("Flour")
+                            ]),
+                      ),
+                    ],
                   ),
                 ],
-              ),
-              Row(
-                children: [
-                  Card(
-                    child: Column(children: [
-                      Image.asset(
-                        "assets/images/lentils.jpg",
-                        width: 100,
-                        height: 150,
-                      ),
-                      Text("Lentils")
-                    ]),
-                  ),
-                  Card(
-                    child: Column(children: [
-                      Image.asset(
-                        "assets/images/potato.jpg",
-                        width: 100,
-                        height: 150,
-                      ),
-                      Text("Potato")
-                    ]),
-                  ),
-                  Card(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                      Image.asset(
-                        "assets/images/flour.jpg",
-                        width: 100,
-                        height: 150,
-                      ),
-                      Text("Flour")
-                    ]),
-                  ),
-                ],
-              ),
-                ],
-
               ),
             ),
-          
           ],
         ),
       ),

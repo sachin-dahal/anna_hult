@@ -1,9 +1,10 @@
 import 'package:anna_hult/common/ui/ui_helper.dart';
+import 'package:anna_hult/core/logger/logger.dart';
 import 'package:anna_hult/modules/seller/data/seller_home_page_controller/carousel.dart';
+import 'package:anna_hult/modules/seller/data/seller_home_page_controller/dummy_data.dart';
 import 'package:anna_hult/modules/seller/data/seller_home_page_controller/seller_home_page_controller.dart';
 import 'package:anna_hult/modules/seller/features/seller_homepage/widget/analytics_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,6 +24,12 @@ class SellerHomePage extends StatelessWidget {
               lHeightSpan,
               _buildSellerProfile(),
               mHeightSpan,
+              //Log.debug("Homepage", "line 27 is clear"),
+              // GetBuilder<SellerHomepageController>(
+              //   builder: (_sellerHomepageController) {
+              //     return _sellerHomepageController.analyticsList();
+              //   },
+              // ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -36,42 +43,75 @@ class SellerHomePage extends StatelessWidget {
                     ),
                   ),
                   mHeightSpan,
-                  // Expanded(
-                  //   child: GetBuilder<SellerHomepageController>(
-                  //     builder: (_sellerHomepageController) {
-                  //       return _sellerHomepageController.analyticsList();
-                  //     },
-                  //   ),
-                  // ),
-                  Row(
-                    children: [
-                      AnalyticsWidget(
-                        color: Color(0xFF090250),
-                        icon: FontAwesome.arrow_up,
-                        averageNum: 97.7,
-                        givenNumber: 20237,
-                        title: "Transaction Success",
+                  //Log.debug("Controller", "line 46 is clear"),
+                  Container(
+                    child: Expanded(
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: data.length,
+                        itemBuilder: (context, index) {
+                          return AnalyticsWidget(
+                            color: data[index].color,
+                            icon: data[index].icon,
+                            averageNum: data[index].averageNum,
+                            givenNumber: data[index].givenNumber,
+                            title: data[index].title,
+                          );
+                        },
                       ),
-                      sWidthSpan,
-                      AnalyticsWidget(
-                        color: Color(0xFF033551),
-                        icon: FontAwesome.arrow_up,
-                        averageNum: 90,
-                        givenNumber: 2,
-                        title: "Response Rates",
-                      ),
-                      sWidthSpan,
-                      // AnalyticsWidget(
-                      //   color: Color(0xFF562FBE),
-                      //   icon: FontAwesome.arrow_up,
-                      //   averageNum: 97.7,
-                      //   givenNumber: 20237,
-                      //   title: "Transaction Success",
-                      // ),
-                    ],
+                    ),
                   ),
                 ],
               ),
+              // Expanded(
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Text(
+              //         "Analytics",
+              //         style: GoogleFonts.montserrat(
+              //           textStyle: TextStyle(
+              //             fontSize: 20.0,
+              //             fontWeight: FontWeight.w500,
+              //           ),
+              //         ),
+              //       ),
+              //       mHeightSpan,
+              //       GetBuilder<SellerHomepageController>(
+              //         builder: (_sellerHomepageController) {
+              //           return _sellerHomepageController.analyticsList();
+              //         },
+              //       ),
+              //       // Row(
+              //       //   children: [
+              //       //     AnalyticsWidget(
+              //       //       color: Color(0xFF090250),
+              //       //       icon: FontAwesome.arrow_up,
+              //       //       averageNum: 97.7,
+              //       //       givenNumber: 20237,
+              //       //       title: "Transaction Success",
+              //       //     ),
+              //       //     sWidthSpan,
+              //       //     AnalyticsWidget(
+              //       //       color: Color(0xFF033551),
+              //       //       icon: FontAwesome.arrow_up,
+              //       //       averageNum: 90,
+              //       //       givenNumber: 2,
+              //       //       title: "Response Rates",
+              //       //     ),
+              //       //     sWidthSpan,
+              //       //     AnalyticsWidget(
+              //       //       color: Color(0xFF562FBE),
+              //       //       icon: FontAwesome.arrow_up,
+              //       //       averageNum: 97.7,
+              //       //       givenNumber: 20237,
+              //       //       title: "Transaction Success",
+              //       //     ),
+              //       //   ],
+              //       // ),
+              //     ],
+              //   ),
+              // ),
               mHeightSpan,
               CarouselEffect(
                 carouselSlider: _sellerHomepageController.carouselController,

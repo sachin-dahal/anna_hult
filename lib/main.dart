@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 import 'modules/buyer/features/buyer_homepage/view/buyer_homepage.dart';
+import 'modules/seller/features/seller_homepage/view/seller_homepage.dart';
 
 void main() {
   runApp(
@@ -27,7 +28,7 @@ class AnnaMain extends StatelessWidget {
         photoSize: 80.0,
         loadingText: Text("Anna: Bla Bla Bla"),
         loaderColor: kButtonColor2,
-        navigateAfterSeconds: BuyerHomePage(),
+        navigateAfterSeconds: SellerHomePage(),
       ),
     );
   }
