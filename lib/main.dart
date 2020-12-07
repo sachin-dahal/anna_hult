@@ -16,7 +16,7 @@ class AnnaMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: kLightTheme,
-      title: "ANNA : Bla bla bla",
+      title: "ANNA : Healthy Food for Healthy Lifestyle",
       debugShowCheckedModeBanner: false,
       home: SplashScreen(
         backgroundColor: kPrimaryColor,
