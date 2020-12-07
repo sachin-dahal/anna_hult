@@ -11,55 +11,55 @@ import 'dummy_data.dart';
 class SellerHomepageController extends GetxController {
   CarouselController carouselController = CarouselController();
 
-  // Widget analyticsList() {
-  //   return Expanded(
-  //     child: ListView.builder(
-  //       scrollDirection: Axis.horizontal,
-  //       itemCount: data.length,
-  //       itemBuilder: (context, index) {
-  //         return AnalyticsWidget(
-  //           color: data[index].color,
-  //           icon: data[index].icon,
-  //           averageNum: data[index].averageNum,
-  //           givenNumber: data[index].givenNumber,
-  //           title: data[index].title,
-  //         );
-  //       },
-  //     ),
-  //   );
-  // }
-
   Widget analyticsList() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Analytics",
-          style: GoogleFonts.montserrat(
-            textStyle: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
-        mHeightSpan,
-        //Log.debug("Controller", "line 46 is clear"),
-        Expanded(
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: data.length,
-            itemBuilder: (context, index) {
-              return AnalyticsWidget(
-                color: data[index].color,
-                icon: data[index].icon,
-                averageNum: data[index].averageNum,
-                givenNumber: data[index].givenNumber,
-                title: data[index].title,
-              );
-            },
-          ),
-        ),
-      ],
+    return Expanded(
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          return AnalyticsWidget(
+            color: data[index].color,
+            icon: data[index].icon,
+            averageNum: data[index].averageNum,
+            givenNumber: data[index].givenNumber,
+            title: data[index].title,
+          );
+        },
+      ),
     );
   }
+
+  // Widget analyticsList() {
+  //   return Column(
+  //     crossAxisAlignment: CrossAxisAlignment.start,
+  //     children: [
+  //       Text(
+  //         "Analytics",
+  //         style: GoogleFonts.montserrat(
+  //           textStyle: TextStyle(
+  //             fontSize: 20.0,
+  //             fontWeight: FontWeight.w500,
+  //           ),
+  //         ),
+  //       ),
+  //       mHeightSpan,
+  //       //Log.debug("Controller", "line 46 is clear"),
+  //       Expanded(
+  //         child: ListView.builder(
+  //           scrollDirection: Axis.horizontal,
+  //           itemCount: data.length,
+  //           itemBuilder: (context, index) {
+  //             return AnalyticsWidget(
+  //               color: data[index].color,
+  //               icon: data[index].icon,
+  //               averageNum: data[index].averageNum,
+  //               givenNumber: data[index].givenNumber,
+  //               title: data[index].title,
+  //             );
+  //           },
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
 }

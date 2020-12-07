@@ -46,29 +46,15 @@ class SellerHomePage extends StatelessWidget {
                   //Log.debug("Controller", "line 46 is clear"),
                   Container(
                     height: 200,
-                    child: Expanded(
-                      child: ListView.separated(
-                        separatorBuilder: (_, __) {
-                          return SizedBox(width: 10);
-                        },
-                        scrollDirection: Axis.horizontal,
-                        itemCount: data.length,
-                        itemBuilder: (context, index) {
-                          return AnalyticsWidget(
-                            color: data[index].color,
-                            icon: data[index].icon,
-                            averageNum: data[index].averageNum,
-                            givenNumber: data[index].givenNumber,
-                            title: data[index].title,
-                          );
-                        },
-                      ),
-                    ),
+                    child: Expanded(child: GetBuilder<SellerHomepageController>(
+                      builder: (_sellerHomepageController) {
+                        return _sellerHomepageController.analyticsList();
+                      },
+                    )),
                   ),
                 ],
               ),
-              // Expanded(
-              //   child: Column(
+              // Expanded(n
               //     crossAxisAlignment: CrossAxisAlignment.start,
               //     children: [
               //       Text(
