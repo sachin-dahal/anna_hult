@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:splashscreen/splashscreen.dart';
 
+import 'modules/buyer/features/buyer_homepage/view/buyer_homepage.dart';
+
 void main() {
   runApp(
     AnnaMain(),
@@ -20,12 +22,12 @@ class AnnaMain extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SplashScreen(
         backgroundColor: kPrimaryColor,
-        seconds: 6,
+        seconds: 0,
         image: Image.asset("assets/images/anna_logo.png"),
         photoSize: 80.0,
         loadingText: Text("Anna: Bla Bla Bla"),
         loaderColor: kButtonColor2,
-        navigateAfterSeconds: LoginPage(),
+        navigateAfterSeconds: BuyerHomePage(),
       ),
     );
   }
