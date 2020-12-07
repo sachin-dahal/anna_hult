@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BuyerHomePage extends StatelessWidget {
   @override
@@ -26,7 +27,10 @@ class BuyerHomePage extends StatelessWidget {
                       Icons.location_on,
                       color: Colors.green,
                     ),
-                    Text("Deliver to\nAaitabare-Itahari, Nepal",style: TextStyle(color: Colors.black),)
+                    Text(
+                      "Deliver to\nAaitabare-Itahari, Nepal",
+                      style: GoogleFonts.poppins(color: Colors.black),
+                    )
                   ],
                 ),
               ],
@@ -49,7 +53,7 @@ class BuyerHomePage extends StatelessWidget {
               children: [
                 Text(
                   "Categories",
-                  style: TextStyle(fontSize: 25,color: Colors.black),
+                  style: GoogleFonts.poppins(color: Colors.black,fontSize: 25),
                 ),
               ],
             ),
@@ -61,47 +65,46 @@ class BuyerHomePage extends StatelessWidget {
                 Column(children: [
                   CircleAvatar(
                     backgroundColor: Colors.blue,
-                    radius: 40,
+                    radius: 35,
                     backgroundImage: AssetImage(
                       "assets/images/vegetable.jpg",
                     ),
                   ),
-                  Text("Vegetable",style: TextStyle(color: Colors.black))
+                  Text("Vegetable",
+                      style: GoogleFonts.poppins(color: Colors.black))
                 ]),
-                Column(
-
-                  children: [
+                Column(children: [
                   //"assets/images/rice.jpeg"
                   CircleAvatar(
                     backgroundColor: Colors.blue,
-                    radius: 40,
+                    radius: 35,
                     backgroundImage: AssetImage(
                       "assets/images/rice.jpeg",
                     ),
                   ),
-                  Text("Rice",style: TextStyle(color: Colors.black))
+                  Text("Rice",style: GoogleFonts.poppins(color: Colors.black))
                 ]),
                 Column(children: [
                   // Image.asset("assets/images/cereals.jpg", width: 80),
                   CircleAvatar(
                     backgroundColor: Colors.blue,
-                    radius: 40,
+                    radius: 35,
                     backgroundImage: AssetImage(
                       "assets/images/cereals.jpg",
                     ),
                   ),
-                  Text("Cereals",style: TextStyle(color: Colors.black))
+                  Text("Cereals", style: GoogleFonts.poppins(color: Colors.black))
                 ]),
                 Column(children: [
                   // Image.asset("assets/images/milkcategory.jpg", width: 80),
                   CircleAvatar(
                     backgroundColor: Colors.blue,
-                    radius: 40,
+                    radius: 35,
                     backgroundImage: AssetImage(
                       "assets/images/milkcategory.jpg",
                     ),
                   ),
-                  Text("Dairy Product",style: TextStyle(color: Colors.black))
+                  Text("Dairy Product", style: GoogleFonts.poppins(color: Colors.black))
                 ]),
               ],
             ),
@@ -113,9 +116,9 @@ class BuyerHomePage extends StatelessWidget {
               children: [
                 Text(
                   "Our Highlights",
-                  style: TextStyle(fontSize: 25,color: Colors.black),
+                  style: TextStyle(fontSize: 25, color: Colors.black),
                 ),
-                Text("View All",style: TextStyle(color: Colors.black))
+                Text("View All", style: GoogleFonts.poppins(color: Colors.black))
               ],
             ),
             Expanded(
@@ -131,7 +134,8 @@ class BuyerHomePage extends StatelessWidget {
                             width: 100,
                             height: 150,
                           ),
-                          Text("Cauliflower",style: TextStyle(color: Colors.black))
+                          Text("Cauliflower",
+                             style: GoogleFonts.poppins(color: Colors.black))
                         ]),
                       ),
                       Card(
@@ -142,7 +146,7 @@ class BuyerHomePage extends StatelessWidget {
                             width: 100,
                             height: 150,
                           ),
-                          Text("Rice",style: TextStyle(color: Colors.black))
+                          Text("Rice", style: GoogleFonts.poppins(color: Colors.black))
                         ]),
                       ),
                       Card(
@@ -155,7 +159,8 @@ class BuyerHomePage extends StatelessWidget {
                                 width: 100,
                                 height: 150,
                               ),
-                              Text("Milk",style: TextStyle(color: Colors.black))
+                              Text("Milk",
+                                  style: GoogleFonts.poppins(color: Colors.black))
                             ]),
                       ),
                     ],
@@ -170,7 +175,7 @@ class BuyerHomePage extends StatelessWidget {
                             width: 100,
                             height: 150,
                           ),
-                          Text("Lentils",style: TextStyle(color: Colors.black))
+                          Text("Lentils",style: GoogleFonts.poppins(color: Colors.black))
                         ]),
                       ),
                       Card(
@@ -181,7 +186,7 @@ class BuyerHomePage extends StatelessWidget {
                             width: 100,
                             height: 150,
                           ),
-                          Text("Potato",style: TextStyle(color: Colors.black))
+                          Text("Potato",style: GoogleFonts.poppins(color: Colors.black))
                         ]),
                       ),
                       Card(
@@ -194,7 +199,8 @@ class BuyerHomePage extends StatelessWidget {
                                 width: 100,
                                 height: 150,
                               ),
-                              Text("Flour",style: TextStyle(color: Colors.black))
+                              Text("Flour",
+                                  style: GoogleFonts.poppins(color: Colors.black))
                             ]),
                       ),
                     ],
