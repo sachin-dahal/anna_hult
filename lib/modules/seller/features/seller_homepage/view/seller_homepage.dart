@@ -45,8 +45,12 @@ class SellerHomePage extends StatelessWidget {
                   mHeightSpan,
                   //Log.debug("Controller", "line 46 is clear"),
                   Container(
+                    height: 200,
                     child: Expanded(
-                      child: ListView.builder(
+                      child: ListView.separated(
+                        separatorBuilder: (_, __) {
+                          return SizedBox(width: 10);
+                        },
                         scrollDirection: Axis.horizontal,
                         itemCount: data.length,
                         itemBuilder: (context, index) {
