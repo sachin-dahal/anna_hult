@@ -1,11 +1,13 @@
+import 'package:anna_hult/common/ui/ui_helper.dart';
+import 'package:anna_hult/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BuyerHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 10),
         child: Column(
@@ -29,7 +31,8 @@ class BuyerHomePage extends StatelessWidget {
                     ),
                     Text(
                       "Deliver to\nAaitabare-Itahari, Nepal",
-                      style: GoogleFonts.poppins(color: Colors.black),
+                      style: GoogleFonts.poppins(
+                          color: Colors.black, fontSize: 14.0),
                     )
                   ],
                 ),
@@ -40,20 +43,32 @@ class BuyerHomePage extends StatelessWidget {
             ),
             TextField(
               decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  hintText: "Search",
-                  hintStyle: TextStyle(color: Colors.black38)),
+                prefixIcon: Icon(FontAwesome.search),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(color: kTertiaryTextColor),
+                    borderRadius: BorderRadius.circular(10)),
+                hintText: "Search for goods...",
+                hintStyle: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    color: Colors.black38,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
             ),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "Categories",
-                  style: GoogleFonts.poppins(color: Colors.black,fontSize: 25),
+                  style: GoogleFonts.poppins(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ],
             ),
@@ -62,6 +77,7 @@ class BuyerHomePage extends StatelessWidget {
             ),
             Row(
               children: [
+                mWidthSpan,
                 Column(children: [
                   CircleAvatar(
                     backgroundColor: Colors.blue,
@@ -70,9 +86,13 @@ class BuyerHomePage extends StatelessWidget {
                       "assets/images/vegetable.jpg",
                     ),
                   ),
-                  Text("Vegetable",
-                      style: GoogleFonts.poppins(color: Colors.black))
+                  Text(
+                    "Vegetables",
+                    style: GoogleFonts.poppins(
+                        color: Colors.black, fontSize: 14.0),
+                  )
                 ]),
+                sWidthSpan,
                 Column(children: [
                   //"assets/images/rice.jpeg"
                   CircleAvatar(
@@ -82,8 +102,13 @@ class BuyerHomePage extends StatelessWidget {
                       "assets/images/rice.jpeg",
                     ),
                   ),
-                  Text("Rice",style: GoogleFonts.poppins(color: Colors.black))
+                  Text(
+                    "Rice",
+                    style: GoogleFonts.poppins(
+                        color: Colors.black, fontSize: 14.0),
+                  )
                 ]),
+                sWidthSpan,
                 Column(children: [
                   // Image.asset("assets/images/cereals.jpg", width: 80),
                   CircleAvatar(
@@ -93,8 +118,13 @@ class BuyerHomePage extends StatelessWidget {
                       "assets/images/cereals.jpg",
                     ),
                   ),
-                  Text("Cereals", style: GoogleFonts.poppins(color: Colors.black))
+                  Text(
+                    "Cereals",
+                    style: GoogleFonts.poppins(
+                        color: Colors.black, fontSize: 14.0),
+                  )
                 ]),
+                sWidthSpan,
                 Column(children: [
                   // Image.asset("assets/images/milkcategory.jpg", width: 80),
                   CircleAvatar(
@@ -104,21 +134,29 @@ class BuyerHomePage extends StatelessWidget {
                       "assets/images/milkcategory.jpg",
                     ),
                   ),
-                  Text("Dairy Product", style: GoogleFonts.poppins(color: Colors.black))
+                  Text(
+                    "Dairy",
+                    style: GoogleFonts.poppins(
+                        color: Colors.black, fontSize: 14.0),
+                  )
                 ]),
               ],
             ),
             SizedBox(
-              height: 60,
+              height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   "Our Highlights",
-                  style: TextStyle(fontSize: 25, color: Colors.black),
+                  style: GoogleFonts.poppins(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500),
                 ),
-                Text("View All", style: GoogleFonts.poppins(color: Colors.black))
+                Text("View All",
+                    style: GoogleFonts.poppins(color: Colors.black))
               ],
             ),
             Expanded(
@@ -126,81 +164,94 @@ class BuyerHomePage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
+                      sWidthSpan,
                       Card(
-                        elevation: 5,
+                        color: Colors.yellow[100],
+                        elevation: 10,
                         child: Column(children: [
                           Image.asset(
                             "assets/images/cauliflower.jpg",
                             width: 100,
-                            height: 150,
+                            height: 120,
                           ),
                           Text("Cauliflower",
-                             style: GoogleFonts.poppins(color: Colors.black))
+                              style: GoogleFonts.poppins(color: Colors.black))
                         ]),
                       ),
                       Card(
-                        elevation: 5,
+                        color: Colors.yellow[100],
+                        elevation: 10,
                         child: Column(children: [
                           Image.asset(
                             "assets/images/rice.jpeg",
                             width: 100,
-                            height: 150,
+                            height: 120,
                           ),
-                          Text("Rice", style: GoogleFonts.poppins(color: Colors.black))
+                          Text("Rice",
+                              style: GoogleFonts.poppins(color: Colors.black))
                         ]),
                       ),
                       Card(
-                        elevation: 5,
+                        color: Colors.yellow[100],
+                        elevation: 10,
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Image.asset(
                                 "assets/images/milk.png",
                                 width: 100,
-                                height: 150,
+                                height: 120,
                               ),
                               Text("Milk",
-                                  style: GoogleFonts.poppins(color: Colors.black))
+                                  style:
+                                      GoogleFonts.poppins(color: Colors.black))
                             ]),
                       ),
                     ],
                   ),
                   Row(
                     children: [
+                      sWidthSpan,
                       Card(
-                        elevation: 5,
+                        color: Colors.yellow[100],
+                        elevation: 10,
                         child: Column(children: [
                           Image.asset(
                             "assets/images/lentils.jpg",
                             width: 100,
-                            height: 150,
+                            height: 120,
                           ),
-                          Text("Lentils",style: GoogleFonts.poppins(color: Colors.black))
+                          Text("Lentils",
+                              style: GoogleFonts.poppins(color: Colors.black))
                         ]),
                       ),
                       Card(
-                        elevation: 5,
+                        color: Colors.yellow[100],
+                        elevation: 10,
                         child: Column(children: [
                           Image.asset(
                             "assets/images/potato.jpg",
                             width: 100,
-                            height: 150,
+                            height: 120,
                           ),
-                          Text("Potato",style: GoogleFonts.poppins(color: Colors.black))
+                          Text("Potato",
+                              style: GoogleFonts.poppins(color: Colors.black))
                         ]),
                       ),
                       Card(
-                        elevation: 5,
+                        color: Colors.yellow[100],
+                        elevation: 10,
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Image.asset(
                                 "assets/images/flour.jpg",
                                 width: 100,
-                                height: 150,
+                                height: 120,
                               ),
                               Text("Flour",
-                                  style: GoogleFonts.poppins(color: Colors.black))
+                                  style:
+                                      GoogleFonts.poppins(color: Colors.black))
                             ]),
                       ),
                     ],

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 List<String> carouselImages = [
-  'assets/images/demo.png',
-  'assets/images/anna_logo.png',
-  'assets/images/demo.png',
-  'assets/images/demo.png',
+  'assets/images/news1.jpg',
+  'assets/images/news2.png',
+  'assets/images/news3.png',
+  'assets/images/news4.png',
 ];
 
 class CarouselEffect extends StatelessWidget {

@@ -4,7 +4,9 @@ import 'package:anna_hult/modules/seller/data/seller_home_page_controller/carous
 import 'package:anna_hult/modules/seller/data/seller_home_page_controller/dummy_data.dart';
 import 'package:anna_hult/modules/seller/data/seller_home_page_controller/seller_home_page_controller.dart';
 import 'package:anna_hult/modules/seller/features/seller_homepage/widget/analytics_widget.dart';
+import 'package:anna_hult/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,92 +18,68 @@ class SellerHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: sPadding,
+        padding: EdgeInsets.only(top: 8.0, left: 5.0, right: 5.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               lHeightSpan,
-              _buildSellerProfile(),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: _buildSellerProfile(),
+              ),
               mHeightSpan,
-              //Log.debug("Homepage", "line 27 is clear"),
-              // GetBuilder<SellerHomepageController>(
-              //   builder: (_sellerHomepageController) {
-              //     return _sellerHomepageController.analyticsList();
-              //   },
-              // ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Analytics",
-                    style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+              Text(
+                "आर्थिक विवरण",
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    color: kTertiaryTextColor,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
                   ),
-                  mHeightSpan,
-                  //Log.debug("Controller", "line 46 is clear"),
-                  Container(
-                    height: 200,
-                    child: Expanded(child: GetBuilder<SellerHomepageController>(
-                      builder: (_sellerHomepageController) {
-                        return _sellerHomepageController.analyticsList();
-                      },
-                    )),
+                ),
+              ),
+              mHeightSpan,
+              Row(
+                children: [
+                  SizedBox(width: 8.0),
+                  AnalyticsWidget(
+                    color: Color(0xFF4a9c17),
+                    icon: FontAwesome.arrow_up,
+                    averageNum: 92.7,
+                    givenNumber: 70237,
+                    title: "लेनदेन सफल दर",
+                  ),
+                  mWidthSpan,
+                  AnalyticsWidget(
+                    color: Color(0xFF2f88ba),
+                    icon: FontAwesome.arrow_down,
+                    averageNum: 98,
+                    givenNumber: 2,
+                    time: true,
+                    title: "प्रतिक्रिया दर",
+                  ),
+                  mWidthSpan,
+                  AnalyticsWidget(
+                    color: Color(0xFF9774f2),
+                    icon: FontAwesome.money,
+                    averageNum: 53.7,
+                    givenNumber: 20237,
+                    title: "नाफा",
                   ),
                 ],
               ),
-              // Expanded(n
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Text(
-              //         "Analytics",
-              //         style: GoogleFonts.montserrat(
-              //           textStyle: TextStyle(
-              //             fontSize: 20.0,
-              //             fontWeight: FontWeight.w500,
-              //           ),
-              //         ),
-              //       ),
-              //       mHeightSpan,
-              //       GetBuilder<SellerHomepageController>(
-              //         builder: (_sellerHomepageController) {
-              //           return _sellerHomepageController.analyticsList();
-              //         },
-              //       ),
-              //       // Row(
-              //       //   children: [
-              //       //     AnalyticsWidget(
-              //       //       color: Color(0xFF090250),
-              //       //       icon: FontAwesome.arrow_up,
-              //       //       averageNum: 97.7,
-              //       //       givenNumber: 20237,
-              //       //       title: "Transaction Success",
-              //       //     ),
-              //       //     sWidthSpan,
-              //       //     AnalyticsWidget(
-              //       //       color: Color(0xFF033551),
-              //       //       icon: FontAwesome.arrow_up,
-              //       //       averageNum: 90,
-              //       //       givenNumber: 2,
-              //       //       title: "Response Rates",
-              //       //     ),
-              //       //     sWidthSpan,
-              //       //     AnalyticsWidget(
-              //       //       color: Color(0xFF562FBE),
-              //       //       icon: FontAwesome.arrow_up,
-              //       //       averageNum: 97.7,
-              //       //       givenNumber: 20237,
-              //       //       title: "Transaction Success",
-              //       //     ),
-              //       //   ],
-              //       // ),
-              //     ],
-              //   ),
-              // ),
+              mHeightSpan,
+              Text(
+                "विक्रेता अपडेट",
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    color: kTertiaryTextColor,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               mHeightSpan,
               CarouselEffect(
                 carouselSlider: _sellerHomepageController.carouselController,
@@ -116,13 +94,17 @@ class SellerHomePage extends StatelessWidget {
   Widget _buildSellerProfile() {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.green[200],
-          width: 5.0,
-        ),
-        borderRadius: BorderRadius.circular(25.0),
+        color: Color(0xFFcee397),
+        borderRadius: BorderRadius.circular(15.0),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFF556052),
+            offset: Offset(0.0, 0.1),
+            blurRadius: 10.0,
+          )
+        ],
       ),
-      padding: lPadding,
+      padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
       child: Column(
         children: [
           Row(
@@ -131,13 +113,37 @@ class SellerHomePage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Ashmina and Sumnima"),
-                  Text("Address of all baklols"),
-                  Text("contact of all baklols"),
+                  Text(
+                    "श्री मुन्ना त्रिपाठी",
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        color: kTertiaryTextColor,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    "गाइघाट, उदयपुर",
+                    style: TextStyle(
+                      color: kTertiaryTextColor,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    "९८७६५४३२१०",
+                    style: TextStyle(
+                      color: kTertiaryTextColor,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ],
               ),
               CircleAvatar(
-                backgroundImage: AssetImage("assets/images/demo.png"),
+                backgroundColor: Colors.transparent,
+                backgroundImage: AssetImage("assets/images/anna_logo.png"),
                 radius: 40.0,
               ),
             ],
@@ -149,7 +155,16 @@ class SellerHomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(25.0),
             ),
             onPressed: () {},
-            child: Text("Transacation History"),
+            child: Text(
+              "लेनदेन ईतिहास",
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                  color: kPrimaryColorLight,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15.0,
+                ),
+              ),
+            ),
           ),
         ],
       ),
